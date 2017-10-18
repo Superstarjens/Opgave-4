@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <math.h>
+
+    double diskriminanten (double a, double b, double c);
+    double firstroot (double a, double b);
+    double secoundroot (double diskriminanten, double a, double b);
+    double secoundroot2 (double diskriminanten, double a, double b);
+    void solve (double diskriminanten, double firstroot, double secoundroot, double secoundroot2 double a, double b, double c);
+
+  int main(void) {
+    double a, b, c;
+
+    do
+  {
+    printf("Enter coeficients a, b, and c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+    solve(a, b, c, firstroot, secoundroot);
+  } while (a!=0 && b!=0 && c!=0);
+  return 0;
+}
+    /*solve of diskriminanten*/
+  double diskriminanten (double a, double b, double c);
+  {
+    double diskriminanten;
+    diskriminanten = b * b - 4 * a * c;
+    return diskriminanten;
+  }
+
+    /*solve of first root*/
+  double firstroot(double a, double b);
+  {
+    double firstroot;
+    firstroot = -b/(2*a);
+    return firstroot;
+  }
+
+    /*solve of secound root*/
+  double secoundroot(double diskriminanten, double a, double b);
+  {
+    secoundroot = (-b + sqrt(diskriminanten))/(2*a);
+    return secoundroot;
+  }
+
+    /*solve of the secound secound root*/
+  double secoundroot2(double diskriminanten, double a, double b);
+  {
+    secoundroot2 = (-b - sqrt(diskriminanten))/(2*a);
+    return secoundroot2;
+  }
+
+    /*solve of the squareroot*/
+  void solve (double diskriminanten, double firstroot, double secoundroot, double secoundroot2, double a, double b, double c){
+      if (diskriminanten < 0){
+    printf("No roots\n");
+  }
+
+  else if (diskriminanten == 0){
+    secoundroot = (-b + sqrt(diskriminanten))/(2*a);
+    printf("One root: %f\n", firstroot);
+  }
+  else {
+    secoundroot = (-b + sqrt(diskriminanten))/(2*a);
+    secoundroot2 = (-b - sqrt(diskriminanten))/(2*a);
+    printf("Two roots: %f and %f\n", secoundroot, secoundroot2);
+  }
+
+  }
